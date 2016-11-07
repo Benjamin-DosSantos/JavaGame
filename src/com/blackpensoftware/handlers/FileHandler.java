@@ -8,7 +8,12 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.blackpensoftware.core.Main;
+import com.blackpensoftware.logs.LogHandler;
+
 public class FileHandler {
+	
+	LogHandler log = Main.getLog();
 	
 	/**
 	 * Method Name: createFile
@@ -68,8 +73,7 @@ public class FileHandler {
 		try {
 			scanner = new Scanner(file);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.addLogError(e.getMessage());
 		}
 		
 		while(scanner.hasNextLine()){
@@ -115,4 +119,31 @@ public class FileHandler {
 		}
 		return newArray;
 	}
+	
+	/**
+	 * Method Name: loadFile
+	 * 
+	 * Method description: 
+	 * 
+	 * @param
+	 * @return
+	 * 
+	 **/
+	public File loadFile(String fileName){
+		File file = createFile(fileName);
+		
+		if(!file.exists()){
+			log.addLogWarning("No file with the name " + fileName + " found");
+			try {
+				log.addLogText("Generating new file with the name " + fileName);
+				file.createNewFile();
+			} catch (IOException e) {
+				log.addLogError("Can't load / generate " + fileName);
+				log.addLogError(e.getMessage());
+				return file;
+			}
+		}
+		log.addLogText(fileName + " loaded");
+		return file;
+	}// End of loadConfig method
 }// End of class

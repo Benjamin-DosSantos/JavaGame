@@ -32,7 +32,7 @@ public class ConfigurationHandler {
 	 * 
 	 **/
 	public void loadConfig(){
-		File config = new File("Settings.txt");
+		File config = fileHandler.createFile("Settings.txt");
 		
 		if(!config.exists()){
 			log.addLogWarning("No settings file found");
@@ -85,7 +85,7 @@ public class ConfigurationHandler {
 	 * 
 	 **/
 	public void parseSettings(){
-		File settingsFile = new File("Settings.txt");
+		File settingsFile = fileHandler.createFile("Settings.txt");
 		
 		if(!settingsFile.exists()){
 			log.addLogError("No settings file");
