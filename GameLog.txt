@@ -1,5 +1,6 @@
-[11/07/16 18:03:04] [INFO] Running LWJGL 3.1.1 build 1
-[11/07/16 18:03:04] [INFO] Settings file loaded
-[11/07/16 18:03:04] [INFO] Settings file parsed
-[11/07/16 18:03:04] [INFO] Custom settings applied
-[11/07/16 18:03:04] [INFO] GLFW window opened
+[11/07/16 20:25:56] [INFO] User started a new game instance
+[11/07/16 20:25:56] [INFO] Running LWJGL 3.1.1 build 1
+[11/07/16 20:25:56] [INFO] Settings file loaded
+[11/07/16 20:25:56] [INFO] Settings file parsed
+[11/07/16 20:25:56] [INFO] Custom settings applied
+[11/07/16 20:25:57] [INFO] GLFW window opened

@@ -31,4 +31,60 @@ public class LauncherFrame extends JFrame{
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		this.add(new LauncherPanel());
 	}// End of constructor
+
+	public int getWidth() {
+		return (int) width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return (int) height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getFrameWidth() {
+		return frameWidth;
+	}
+
+	public void setFrameWidth(int frameWidth) {
+		this.frameWidth = frameWidth;
+	}
+
+	public int getFrameHeight() {
+		return frameHeight;
+	}
+
+	public void setFrameHeight(int frameHeight) {
+		this.frameHeight = frameHeight;
+	}
+
+	public int getFramePositionX() {
+		return framePositionX;
+	}
+
+	public void setFramePositionX(int framePositionX) {
+		this.framePositionX = framePositionX;
+	}
+
+	public int getFramePositionY() {
+		return framePositionY;
+	}
+
+	public void setFramePositionY(int framePositionY) {
+		this.framePositionY = framePositionY;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 }// End of class
