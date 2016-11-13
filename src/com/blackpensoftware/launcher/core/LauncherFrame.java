@@ -132,4 +132,8 @@ public class LauncherFrame extends JFrame{
 	public void setSettings(Settings settings) {
 		this.settings = settings;
 	}
+
+	public void toggleVisible() {
+		this.setVisible(!this.isVisible());
+	}
 }// End of class

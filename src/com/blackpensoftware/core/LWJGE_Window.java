@@ -56,7 +56,6 @@ public class LWJGE_Window {
 		this.config = config;
 		this.settings = settings;
 		
-		
 		this.log.addLogText("Running LWJGL " + Version.getVersion());
 
 		this.config = new ConfigurationHandler();
@@ -96,7 +95,7 @@ public class LWJGE_Window {
 		int windowHeight = settings.getHeight();
 
 		// Create the window
-		window = glfwCreateWindow(windowWidth, windowHeight, "Hello World!", NULL, NULL);
+		window = glfwCreateWindow(windowWidth, windowHeight, "This is where my game's name would be, IF I HAD ONE", NULL, NULL);
 		if (window == NULL){
 			log.addLogError("Failed to create the GLFW window");
 			throw new RuntimeException("Failed to create the GLFW window");
@@ -143,6 +142,7 @@ public class LWJGE_Window {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 			glfwSwapBuffers(window); // swap the color buffers
 			// Poll for window events. The key callback above will only be
+			
 			// invoked during this call.
 			glfwPollEvents();
 		}
