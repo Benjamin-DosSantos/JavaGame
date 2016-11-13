@@ -5,15 +5,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import com.blackpensoftware.core.Main;
 import com.blackpensoftware.handlers.FileHandler;
+import com.blackpensoftware.launcher.core.LauncherFrame;
 import com.blackpensoftware.logs.LogHandler;
 
 public class ConfigurationHandler {
 	String[] settings = {"width", "height"};
 	
 	FileHandler fileHandler = new FileHandler();
-	LogHandler log = Main.getLog();
+	LogHandler log = LauncherFrame.getLog();
 	
 	File config;
 	

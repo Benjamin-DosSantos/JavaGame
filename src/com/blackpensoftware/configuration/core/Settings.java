@@ -1,6 +1,6 @@
 package com.blackpensoftware.configuration.core;
 
-import com.blackpensoftware.core.Main;
+import com.blackpensoftware.launcher.core.LauncherFrame;
 
 public class Settings {
 	
@@ -41,7 +41,7 @@ public class Settings {
 	 **/
 	private static int checkValue(int value) {
 		if(value < minDimention){
-			Main.getLog().addLogError("Settings value was out of range, returned to default value");
+			LauncherFrame.getLog().addLogError("Settings value was out of range, returned to default value");
 			return minDimention; 
 		} else { 
 			return value; 

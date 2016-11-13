@@ -6,7 +6,20 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+import com.blackpensoftware.configuration.core.ConfigurationHandler;
+import com.blackpensoftware.configuration.core.Settings;
+import com.blackpensoftware.core.LWJGE_Window;
+import com.blackpensoftware.logs.LogHandler;
+
 public class LauncherFrame extends JFrame{
+	
+	static LogHandler log = new LogHandler();
+	static ConfigurationHandler config;
+	static Settings settings = new Settings();
+	
+	private static LWJGE_Window gameView = new LWJGE_Window();
+	
+	
 	private Color bgColor = Color.DARK_GRAY;
 	
 	private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -86,5 +99,37 @@ public class LauncherFrame extends JFrame{
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	public static LWJGE_Window getGameView() {
+		return gameView;
+	}
+
+	public void setGameView(LWJGE_Window gameView) {
+		this.gameView = gameView;
+	}
+
+	public static LogHandler getLog() {
+		return log;
+	}
+
+	public static void setLog(LogHandler log) {
+		LauncherFrame.log = log;
+	}
+
+	public static ConfigurationHandler getConfig() {
+		return config;
+	}
+
+	public void setConfig(ConfigurationHandler config) {
+		this.config = config;
+	}
+
+	public static Settings getSettings() {
+		return settings;
+	}
+
+	public void setSettings(Settings settings) {
+		this.settings = settings;
 	}
 }// End of class

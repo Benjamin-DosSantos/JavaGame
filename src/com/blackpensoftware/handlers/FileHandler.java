@@ -8,12 +8,12 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.blackpensoftware.core.Main;
+import com.blackpensoftware.launcher.core.LauncherFrame;
 import com.blackpensoftware.logs.LogHandler;
 
 public class FileHandler {
 	
-	LogHandler log = Main.getLog();
+	LogHandler log = LauncherFrame.getLog();
 	
 	/**
 	 * Method Name: createFile

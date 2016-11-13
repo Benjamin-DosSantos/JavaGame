@@ -42,20 +42,27 @@ import com.blackpensoftware.configuration.core.ConfigurationHandler;
 import com.blackpensoftware.configuration.core.Settings;
 import com.blackpensoftware.logs.LogHandler;
 
-public class Main {
+public class LWJGE_Window {
 	// The window handle
 	private long window;
-	static LogHandler log = new LogHandler();
-	ConfigurationHandler config;
-	Settings settings = new Settings();
+	private boolean isRunning = false;
 	
-	public void run() {
+	private LogHandler log;
+	private ConfigurationHandler config; 
+	private Settings settings;
+	
+	public void run(LogHandler log, ConfigurationHandler config, Settings settings) {
+		this.log = log;
+		this.config = config;
+		this.settings = settings;
 		
-		log.addLogText("Running LWJGL " + Version.getVersion());
+		
+		this.log.addLogText("Running LWJGL " + Version.getVersion());
 
-		config = new ConfigurationHandler();
+		this.config = new ConfigurationHandler();
 		
 		try {
+			isRunning = true;
 			init();
 			loop();
 
@@ -66,6 +73,7 @@ public class Main {
 			// Terminate GLFW and free the error callback
 			glfwTerminate();
 			glfwSetErrorCallback(null).free();
+			isRunning = false;
 		}
 	}
 
@@ -140,16 +148,8 @@ public class Main {
 		}
 	}
 
-	public static void main(String[] args) {
-		new Main().run();
-	}
-
-	public static LogHandler getLog() {
-		return log;
-	}
-
-	public void setLog(LogHandler log) {
-		this.log = log;
+	public boolean isRunning() {
+		return isRunning;
 	}
 
 }// End of class
